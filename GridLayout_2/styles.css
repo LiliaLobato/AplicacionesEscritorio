@@ -1,0 +1,7 @@
+
+.fila > div[class ^="columna-"]{
+    background-color: hotpink;
+    text-align: center;
+    color: grays;
+    border: solid 1px pink;
+}
