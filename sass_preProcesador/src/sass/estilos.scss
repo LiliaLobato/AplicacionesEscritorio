@@ -1,11 +1,25 @@
 @import 'colores';
+@import 'mixins';
 
 html, body{
-    margin: 0;
-    padding: 0;
+    @include noMargin;
     font-family: Verdana;
 }
 
 header {
     background-color: $color-primario;
+
 }
+
+.button {
+    background-color: $color-fondo-default;
+    padding: 6px 12px;
+    font-size: 18px;
+    border-radius: 6px;
+
+    &-primario{
+        @extend .button;
+        background-color: $color-primario;
+    }
+    
+  }

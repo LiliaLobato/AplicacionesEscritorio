@@ -7,11 +7,6 @@
   width: 100%;
   box-sizing: border-box;
 }
-.fila ::after {
-  content: "";
-  display: table;
-  clear: both;
-}
 .fila > div.columna-75 {
   width: 75%;
 }
@@ -20,6 +15,11 @@
 }
 .fila > div.columna-25 {
   width: 25%;
+}
+.fila ::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 .fila.rtl {
   border: solid 1px #000;

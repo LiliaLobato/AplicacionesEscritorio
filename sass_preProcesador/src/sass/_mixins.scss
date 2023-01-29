@@ -1,0 +1,10 @@
+@mixin noMargin{
+    margin: 0;
+    padding: 0;
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1024px) {
+        @content;
+    }
+}
