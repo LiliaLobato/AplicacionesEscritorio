@@ -1,4 +1,17 @@
+@use 'sass:math';
 @import 'mixins';
+
+$columnas: 12;
+
+@function getWidth($cols){
+    @return math.div($cols, $columnas)*100%;
+}
+
+@for $i from 1 through $columnas {
+    .columna-#{$i} { 
+        width: getWidth($i);
+    }
+}
 
 .fila{
     width: 100%;
