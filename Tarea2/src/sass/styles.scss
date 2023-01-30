@@ -1,0 +1,171 @@
+@import 'mixins';
+
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Faunces';
+}
+
+body{
+    height: 100%;
+}
+
+header, footer {
+    height: 32px;
+    font-size: 16px;
+    width: 100%;
+    background-color: #F3C75E;
+    color: gray;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 12px;
+}
+
+main{
+    margin: 0 auto;
+    background-color: #EED7D7;
+}
+
+.container{
+    padding: 32px;
+
+    > section {
+        text-align: center;
+        color: gray;
+        min-height: 20px;
+        min-width: 200px;
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+
+#specifics img {
+    border-radius: 50%;
+}
+
+.blockTitle{
+    font-weight: 600;
+    color: #EED7D7;
+    font-size: 32px;
+    margin-bottom: 10px;
+    width: auto;
+    min-height: 38px;
+}
+
+a {
+    color: #F26C7C;
+}
+
+hr {
+    width: 100%;
+    height: 5px;
+    background-color: #F26C7C;
+    border: 0px solid #F26C7C;
+}
+
+p {
+    color: #4E6398;
+    font-weight: 600;
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+
+#hobbies {
+    outline-color: #2F7F67;
+    > .blockTitle   { color: #2F7F67; }
+    > p             { color: #2F7F67; }
+}
+
+#food {
+    outline-color: #F26C7C;
+    > .blockTitle   { color: #F26C7C; }
+    > p             { color: #F26C7C; }
+}
+
+[class*="circle"]{
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+}
+
+[class*="rectangle"]{
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+}
+
+[class*="cover"]{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+[class*="col-specifics"]{
+    width: 100%;
+
+    .blockTitle {
+        background-color: #4E6398;
+    }
+}
+
+[class*="box-stroke"] {
+    outline-width: 3px;
+    outline-style: solid;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+[class*="pageTitle"]{
+    font-weight: 600;
+    color: #1C3979;
+    font-size: 64px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+[class*="overviewContent"]{
+    color: #2F7F67; 
+    font-size: 20px; 
+    text-align: center;
+    width: 100%;
+}
+
+#hiking_2, #dance, #food_2, #food_3, #max, #ambar  {display: none;}
+
+@include tablet {
+    /* For tablets: */
+    .col-specifics-m {width: 45%;}
+    #specifics {display: flex; column-gap: 10%;}
+    #overview {display: flex; column-gap: 1%; }
+    #details section {display: flex; column-gap: 5%; justify-content: center;}
+    .circle-m {width: 150px; height: 150px;}
+    .rectangle-m {width: 250px; height: 200px;}
+    .cover-m {height: 300px;}
+    #funFacts > .col-specifics-m {width: 100%;}
+    #dailyLife > .col-specifics-m {width: 100%;}
+    #dance, #food_2, #max {display:unset;}
+    .box-stroke-m {outline-width: 5px;}
+    hr {width:2%; height: auto}
+    .overviewContent-m {width: 48%; text-align: left; font-size: 22px; }
+    .pageTitle-m {width: 48%; text-align: right;}
+}
+
+@include desktop {
+    /* For desktop: */
+    .col-specifics-g {width: 45%;}
+    #details section {display: flex; column-gap: 5%; justify-content: center;}
+    #specifics {display: flex; column-gap: 10%;} 
+    #overview {display: flex; column-gap: 1%; }
+    .circle-g {width: 200px; height: 200px;}
+    .rectangle-g {width: 300px; height: 250px;}
+    .cover-m {height: 400px;}
+    #funFacts, #dailyLife {display: flex; column-gap: 10%;}
+    #hiking_2, #dance, #food_2, #food_3, #max, #ambar {display:unset;}
+    .box-stroke-g {outline-width: 5px;}
+    hr {width:2%; height: auto;}
+    .overviewContent-g {width: 48%; text-align: left; font-size: 24px;  }
+    .pageTitle-g {width: 48%; text-align: right;}
+}
+ 
