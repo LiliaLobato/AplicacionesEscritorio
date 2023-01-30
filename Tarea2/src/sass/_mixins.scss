@@ -1,10 +1,11 @@
+@import 'colors';
+@import 'fonts';
 
 @mixin tablet {
-    @media only screen and (min-width: 600px) {
+    @media only screen and (min-width: 610px) {
         @content;
     }
 }
-
 
 @mixin desktop {
     @media only screen and (min-width: 1100px) {
@@ -12,3 +13,55 @@
     }
 }
 
+@mixin imgCol_1 {
+    #hiking_1, #food_1, #kuro {
+        @content;
+    }
+}
+
+@mixin imgCol_2 {
+    #dance, #food_2, #max {
+        @content;
+    }
+}
+
+@mixin imgCol_3 {
+    #hiking_2, #food_3, #ambar {
+        @content;
+    }
+}
+
+@mixin defaultPic{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+@mixin defaultFont{
+    color: $color-blue;
+    font-weight: $font-weight;
+    font-size: $font-small;
+    padding-bottom: 10px;
+    font-family: $font-family;
+}
+
+@mixin defaultTitle{
+    font-weight: $font-weight;
+    margin-bottom: 10px;
+    width: 100%;
+    font-family: $font-family;
+}
+
+@mixin boxStroke{
+    outline-width: 3px;
+    outline-style: solid;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+@mixin default{
+    margin: 0;
+    padding: 0;
+    font-family: $font-family;
+    min-width: 300px;
+}

@@ -1,21 +1,17 @@
 @import 'mixins';
+@import 'colors';
+@import 'fonts';
 
-html, body{
-    margin: 0;
-    padding: 0;
-    font-family: 'Faunces';
-}
+html, body{ @include default; }
 
-body{
-    height: 100%;
-}
+body { height: 100%; }
 
 header, footer {
     height: 32px;
-    font-size: 16px;
+    font-size: $font-xsmall;
     width: 100%;
-    background-color: #F3C75E;
-    color: gray;
+    background-color: $color-yellow;
+    color: $color-grey;
     text-align: center;
     margin: 0 auto;
     padding-top: 12px;
@@ -23,7 +19,7 @@ header, footer {
 
 main{
     margin: 0 auto;
-    background-color: #EED7D7;
+    background-color: $color-background;
 }
 
 .container{
@@ -40,132 +36,115 @@ main{
     }
 }
 
-
-#specifics img {
-    border-radius: 50%;
-}
-
 .blockTitle{
-    font-weight: 600;
-    color: #EED7D7;
-    font-size: 32px;
-    margin-bottom: 10px;
-    width: auto;
+    @include defaultTitle;
+    color: $color-background;
+    font-size: $font-large;
     min-height: 38px;
 }
 
-a {
-    color: #F26C7C;
-}
+p { @include defaultFont; }
+
+a { color: $color-pink; }
 
 hr {
     width: 100%;
     height: 5px;
-    background-color: #F26C7C;
-    border: 0px solid #F26C7C;
-}
-
-p {
-    color: #4E6398;
-    font-weight: 600;
-    font-size: 18px;
-    padding-bottom: 10px;
+    background-color: $color-pink;
+    border: 0px solid $color-pink;
 }
 
 #hobbies {
-    outline-color: #2F7F67;
-    > .blockTitle   { color: #2F7F67; }
-    > p             { color: #2F7F67; }
+    outline-color: $color-font;
+    > .blockTitle   { color: $color-font; }
+    > p             { color: $color-font; }
 }
 
 #food {
-    outline-color: #F26C7C;
-    > .blockTitle   { color: #F26C7C; }
-    > p             { color: #F26C7C; }
+    outline-color: $color-pink;
+    > .blockTitle   { color: $color-pink; }
+    > p             { color: $color-pink; }
 }
 
-[class*="circle"]{
-    width: 130px;
-    height: 130px;
-    object-fit: cover;
+#pets {
+    outline-color: $color-blue;
+    > .blockTitle   { color: $color-blue; }
+    > p             { color: $color-blue; }
 }
 
-[class*="rectangle"]{
+[class*="rectangle"] { 
+    @include defaultPic; 
     width: 200px;
-    height: 150px;
-    object-fit: cover;
 }
 
-[class*="cover"]{
-    width: 100%;
+[class*="circle"] { 
+    @include defaultPic; 
+    border-radius: 50%;
+    width: 150px;
+}
+
+[class*="cover"] {
+    @include defaultPic;
     height: 250px;
-    object-fit: cover;
 }
 
-[class*="col-specifics"]{
+[class*="col-specifics"] {
     width: 100%;
-
-    .blockTitle {
-        background-color: #4E6398;
-    }
+    .blockTitle { background-color: $color-blue; }
 }
 
 [class*="box-stroke"] {
-    outline-width: 3px;
-    outline-style: solid;
-    padding-left: 10px;
-    padding-right: 10px;
+    @include boxStroke;
 }
 
-[class*="pageTitle"]{
-    font-weight: 600;
-    color: #1C3979;
-    font-size: 64px;
-    margin-bottom: 10px;
-    width: 100%;
+[class*="pageTitle"] {
+    @include defaultTitle;
+    color: $color-boldFont;
+    font-size: $font-xlarge;
 }
 
-[class*="overviewContent"]{
-    color: #2F7F67; 
-    font-size: 20px; 
+[class*="overviewContent"] {
+    color: $color-font; 
+    font-size: $font-text; 
     text-align: center;
     width: 100%;
 }
 
-#hiking_2, #dance, #food_2, #food_3, #max, #ambar  {display: none;}
+@include imgCol_3 {display: none;}
+@include imgCol_2 {display: none;}
 
 @include tablet {
     /* For tablets: */
     .col-specifics-m {width: 45%;}
-    #specifics {display: flex; column-gap: 10%;}
-    #overview {display: flex; column-gap: 1%; }
-    #details section {display: flex; column-gap: 5%; justify-content: center;}
-    .circle-m {width: 150px; height: 150px;}
+    #specifics, #overview, #details section {display: flex; column-gap: 10%;}
+    #overview {column-gap: 2%;}
+    #details section {column-gap: 5%; justify-content: center;}
+    .circle-m {width: 200px; height: 200px;}
     .rectangle-m {width: 250px; height: 200px;}
     .cover-m {height: 300px;}
+    @include imgCol_2 {display:unset;}
+    .box-stroke-m {outline-width: 5px;}
+    hr {width:2%; height: auto;}
+    .overviewContent-m {width: 48%; text-align: left; font-size: $font-medium; }
+    .pageTitle-m {width: 48%; text-align: right;}
     #funFacts > .col-specifics-m {width: 100%;}
     #dailyLife > .col-specifics-m {width: 100%;}
-    #dance, #food_2, #max {display:unset;}
-    .box-stroke-m {outline-width: 5px;}
-    hr {width:2%; height: auto}
-    .overviewContent-m {width: 48%; text-align: left; font-size: 22px; }
-    .pageTitle-m {width: 48%; text-align: right;}
 }
 
 @include desktop {
     /* For desktop: */
     .col-specifics-g {width: 45%;}
-    #details section {display: flex; column-gap: 5%; justify-content: center;}
-    #specifics {display: flex; column-gap: 10%;} 
-    #overview {display: flex; column-gap: 1%; }
+    #specifics, #funFacts, #dailyLife, #overview, #details section {display: flex; column-gap: 10%;} 
+    #overview {column-gap: 4%;}
+    #details section {column-gap: 5%; justify-content: center;}
     .circle-g {width: 200px; height: 200px;}
     .rectangle-g {width: 300px; height: 250px;}
     .cover-m {height: 400px;}
-    #funFacts, #dailyLife {display: flex; column-gap: 10%;}
-    #hiking_2, #dance, #food_2, #food_3, #max, #ambar {display:unset;}
+    @include imgCol_2 {display:unset;}
+    @include imgCol_3 {display:unset;}
     .box-stroke-g {outline-width: 5px;}
     hr {width:2%; height: auto;}
-    .overviewContent-g {width: 48%; text-align: left; font-size: 24px;  }
-    .pageTitle-g {width: 48%; text-align: right;}
+    .overviewContent-g {width: 47%; text-align: left; font-size: $font-medium + 2px;  }
+    .pageTitle-g {width: 47%; text-align: right;}
 }
  
