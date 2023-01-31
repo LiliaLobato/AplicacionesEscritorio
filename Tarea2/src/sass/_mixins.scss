@@ -1,6 +1,12 @@
 @import 'colors';
 @import 'fonts';
 
+$default-padding: 10px;
+$default-margin: 32px;
+$img-small: 150px;
+$img-medium: $img-small + 50px;
+$img-large: $img-medium + 50px;
+
 @mixin tablet {
     @media only screen and (min-width: 610px) {
         @content;
@@ -32,8 +38,6 @@
 }
 
 @mixin defaultPic{
-    width: 100%;
-    height: 150px;
     object-fit: cover;
 }
 
@@ -41,22 +45,22 @@
     color: $color-blue;
     font-weight: $font-weight;
     font-size: $font-small;
-    padding-bottom: 10px;
+    padding-bottom: $default-padding;
     font-family: $font-family;
 }
 
 @mixin defaultTitle{
     font-weight: $font-weight;
-    margin-bottom: 10px;
+    margin-bottom: $default-padding;
     width: 100%;
     font-family: $font-family;
 }
 
 @mixin boxStroke{
-    outline-width: 3px;
+    outline-width: math.div($default-padding,3);
     outline-style: solid;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: $default-padding;
+    padding-right: $default-padding;
 }
 
 @mixin default{

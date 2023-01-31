@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import 'mixins';
 @import 'colors';
 @import 'fonts';
@@ -7,14 +8,14 @@ html, body{ @include default; }
 body { height: 100%; }
 
 header, footer {
-    height: 32px;
-    font-size: $font-xsmall;
     width: 100%;
-    background-color: $color-yellow;
-    color: $color-grey;
     text-align: center;
     margin: 0 auto;
-    padding-top: 12px;
+    padding-top: $default-padding;
+    height: $default-margin;
+    font-size: $font-xsmall;
+    background-color: $color-yellow;
+    color: $color-grey;
 }
 
 main{
@@ -23,16 +24,16 @@ main{
 }
 
 .container{
-    padding: 32px;
+    padding: $default-margin;
 
     > section {
-        text-align: center;
-        color: gray;
-        min-height: 20px;
-        min-width: 200px;
         width: 100%;
-        margin-top: 20px;
-        margin-bottom: 20px;
+        min-width: 200px;
+        text-align: center;
+        min-height: $default-padding * 2;
+        margin-top: $default-padding * 2;
+        margin-bottom: $default-padding * 2;
+        color: $color-grey;
     }
 }
 
@@ -40,7 +41,7 @@ main{
     @include defaultTitle;
     color: $color-background;
     font-size: $font-large;
-    min-height: 38px;
+    min-height: $default-margin;
 }
 
 p { @include defaultFont; }
@@ -49,7 +50,7 @@ a { color: $color-pink; }
 
 hr {
     width: 100%;
-    height: 5px;
+    height: math.div($default-padding,2);
     background-color: $color-pink;
     border: 0px solid $color-pink;
 }
@@ -72,21 +73,27 @@ hr {
     > p             { color: $color-blue; }
 }
 
-[class*="rectangle"] { 
-    @include defaultPic; 
-    width: 200px;
-}
-
-[class*="circle"] { 
-    @include defaultPic; 
-    border-radius: 50%;
-    width: 150px;
-}
-
-[class*="cover"] {
+img {
     @include defaultPic;
-    height: 250px;
+    
+    &[class*="circle"]{ 
+        @extend img;
+        height: $img-small;
+        width: $img-small;
+        border-radius: 50%;
+    }   
+    &[class*="rectangle"] { 
+        @extend img;
+        height: $img-small; 
+        width: $img-small + 50px;
+    }
+    &[class*="cover"] {
+        @extend img;
+        width: 100%;
+        height: $img-small * 2;
+    }
 }
+
 
 [class*="col-specifics"] {
     width: 100%;
@@ -116,14 +123,16 @@ hr {
 @include tablet {
     /* For tablets: */
     .col-specifics-m {width: 45%;}
-    #specifics, #overview, #details section {display: flex; column-gap: 10%;}
+    #specifics, #overview {display: flex; column-gap: 10%;}
     #overview {column-gap: 2%;}
-    #details section {column-gap: 5%; justify-content: center;}
-    .circle-m {width: 200px; height: 200px;}
-    .rectangle-m {width: 250px; height: 200px;}
-    .cover-m {height: 300px;}
+    #details section {display: flex; column-gap: 5%; justify-content: center;}
+    img{
+        &.circle-m {width: $img-medium; height: $img-medium;}
+        &.rectangle-m {width: $img-medium + 50px; height: $img-medium;}
+        &.cover-m {height: $img-medium * 2;}
+    }
     @include imgCol_2 {display:unset;}
-    .box-stroke-m {outline-width: 5px;}
+    .box-stroke-m {outline-width: math.div($default-padding,2);}
     hr {width:2%; height: auto;}
     .overviewContent-m {width: 48%; text-align: left; font-size: $font-medium; }
     .pageTitle-m {width: 48%; text-align: right;}
@@ -134,16 +143,16 @@ hr {
 @include desktop {
     /* For desktop: */
     .col-specifics-g {width: 45%;}
-    #specifics, #funFacts, #dailyLife, #overview, #details section {display: flex; column-gap: 10%;} 
+    #specifics, #funFacts, #dailyLife, #overview {display: flex; column-gap: 10%;} 
     #overview {column-gap: 4%;}
-    #details section {column-gap: 5%; justify-content: center;}
-    .circle-g {width: 200px; height: 200px;}
-    .rectangle-g {width: 300px; height: 250px;}
-    .cover-m {height: 400px;}
+    img{
+        &.circle-m {width: $img-medium; height: $img-medium;}
+        &.rectangle-m {width: $img-large + 50px; height: $img-large;}
+        &.cover-m {height: $img-large * 2;}
+    }
     @include imgCol_2 {display:unset;}
     @include imgCol_3 {display:unset;}
-    .box-stroke-g {outline-width: 5px;}
-    hr {width:2%; height: auto;}
+    .box-stroke-g {outline-width: math.div($default-padding,2);}
     .overviewContent-g {width: 47%; text-align: left; font-size: $font-medium + 2px;  }
     .pageTitle-g {width: 47%; text-align: right;}
 }

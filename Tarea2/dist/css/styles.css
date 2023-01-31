@@ -10,14 +10,14 @@ body {
 }
 
 header, footer {
-  height: 32px;
-  font-size: 16px;
   width: 100%;
-  background-color: #F3C75E;
-  color: #678485;
   text-align: center;
   margin: 0 auto;
-  padding-top: 12px;
+  padding-top: 10px;
+  height: 32px;
+  font-size: 16px;
+  background-color: #F3C75E;
+  color: #678485;
 }
 
 main {
@@ -29,13 +29,13 @@ main {
   padding: 32px;
 }
 .container > section {
-  text-align: center;
-  color: gray;
-  min-height: 20px;
-  min-width: 200px;
   width: 100%;
+  min-width: 200px;
+  text-align: center;
+  min-height: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
+  color: #678485;
 }
 
 .blockTitle {
@@ -45,7 +45,7 @@ main {
   font-family: "Faunces";
   color: #EED7D7;
   font-size: 32px;
-  min-height: 38px;
+  min-height: 32px;
 }
 
 p {
@@ -97,26 +97,21 @@ hr {
   color: #4E6398;
 }
 
-[class*=rectangle] {
-  width: 100%;
-  height: 150px;
+img, img[class*=cover], img[class*=rectangle], img[class*=circle] {
   object-fit: cover;
+}
+img[class*=circle] {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+img[class*=rectangle] {
+  height: 150px;
   width: 200px;
 }
-
-[class*=circle] {
+img[class*=cover] {
   width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 50%;
-  width: 150px;
-}
-
-[class*=cover] {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  height: 250px;
+  height: 300px;
 }
 
 [class*=col-specifics] {
@@ -127,7 +122,7 @@ hr {
 }
 
 [class*=box-stroke] {
-  outline-width: 3px;
+  outline-width: 3.3333333333px;
   outline-style: solid;
   padding-left: 10px;
   padding-right: 10px;
@@ -162,7 +157,7 @@ hr {
   .col-specifics-m {
     width: 45%;
   }
-  #specifics, #overview, #details section {
+  #specifics, #overview {
     display: flex;
     column-gap: 10%;
   }
@@ -170,19 +165,20 @@ hr {
     column-gap: 2%;
   }
   #details section {
+    display: flex;
     column-gap: 5%;
     justify-content: center;
   }
-  .circle-m {
+  img.circle-m {
     width: 200px;
     height: 200px;
   }
-  .rectangle-m {
+  img.rectangle-m {
     width: 250px;
     height: 200px;
   }
-  .cover-m {
-    height: 300px;
+  img.cover-m {
+    height: 400px;
   }
   #dance, #food_2, #max {
     display: unset;
@@ -215,27 +211,23 @@ hr {
   .col-specifics-g {
     width: 45%;
   }
-  #specifics, #funFacts, #dailyLife, #overview, #details section {
+  #specifics, #funFacts, #dailyLife, #overview {
     display: flex;
     column-gap: 10%;
   }
   #overview {
     column-gap: 4%;
   }
-  #details section {
-    column-gap: 5%;
-    justify-content: center;
-  }
-  .circle-g {
+  img.circle-m {
     width: 200px;
     height: 200px;
   }
-  .rectangle-g {
+  img.rectangle-m {
     width: 300px;
     height: 250px;
   }
-  .cover-m {
-    height: 400px;
+  img.cover-m {
+    height: 500px;
   }
   #dance, #food_2, #max {
     display: unset;
@@ -245,10 +237,6 @@ hr {
   }
   .box-stroke-g {
     outline-width: 5px;
-  }
-  hr {
-    width: 2%;
-    height: auto;
   }
   .overviewContent-g {
     width: 47%;
