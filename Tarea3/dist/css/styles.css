@@ -121,6 +121,19 @@ img[class*=cover] {
   background-color: #4E6398;
 }
 
+[class*=col-menu] {
+  width: 100%;
+}
+[class*=col-menu] .blockTitle {
+  background-color: #4E6398;
+}
+[class*=col-menu] #daily {
+  background-color: #F26C7C;
+}
+[class*=col-menu] #education {
+  background-color: #2F7F67;
+}
+
 [class*=box-stroke] {
   outline-width: 3.3333333333px;
   outline-style: solid;
@@ -157,7 +170,10 @@ img[class*=cover] {
   .col-specifics-m {
     width: 45%;
   }
-  #specifics, #overview {
+  .col-menu-m {
+    width: 25%;
+  }
+  #specifics, #overview, #menu {
     display: flex;
     column-gap: 10%;
   }
@@ -211,7 +227,10 @@ img[class*=cover] {
   .col-specifics-g {
     width: 45%;
   }
-  #specifics, #funFacts, #dailyLife, #overview {
+  .col-menu-g {
+    width: 25%;
+  }
+  #specifics, #funFacts, #dailyLife, #overview, #menu {
     display: flex;
     column-gap: 10%;
   }

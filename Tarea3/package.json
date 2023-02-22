@@ -1,7 +1,7 @@
 {
-  "name": "tarea2",
+  "name": "tarea3",
   "version": "1.0.0",
-  "description": "tarea 2, conceptos sass",
+  "description": "tarea 3, node web app",
   "main": "index.js",
   "scripts": {
     "estilos": "sass src/sass:dist/css --no-source-map",

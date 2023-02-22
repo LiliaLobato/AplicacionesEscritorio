@@ -94,10 +94,15 @@ img {
     }
 }
 
-
 [class*="col-specifics"] {
     width: 100%;
     .blockTitle { background-color: $color-blue; }
+}
+[class*="col-menu"] {
+    width: 100%;
+    .blockTitle { background-color: $color-blue; }
+    #daily { background-color: $color-pink; }
+    #education { background-color: $color-font; }
 }
 
 [class*="box-stroke"] {
@@ -123,7 +128,8 @@ img {
 @include tablet {
     /* For tablets: */
     .col-specifics-m {width: 45%;}
-    #specifics, #overview {display: flex; column-gap: 10%;}
+    .col-menu-m {width: 25%;}
+    #specifics, #overview, #menu {display: flex; column-gap: 10%;}
     #overview {column-gap: 2%;}
     #details section {display: flex; column-gap: 5%; justify-content: center;}
     img{
@@ -143,7 +149,8 @@ img {
 @include desktop {
     /* For desktop: */
     .col-specifics-g {width: 45%;}
-    #specifics, #funFacts, #dailyLife, #overview {display: flex; column-gap: 10%;} 
+    .col-menu-g {width: 25%;}
+    #specifics, #funFacts, #dailyLife, #overview, #menu {display: flex; column-gap: 10%;} 
     #overview {column-gap: 4%;}
     img{
         &.circle-m {width: $img-medium; height: $img-medium;}
