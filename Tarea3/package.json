@@ -4,12 +4,18 @@
   "description": "tarea 3, node web app",
   "main": "index.js",
   "scripts": {
-    "estilos": "sass src/sass:dist/css --no-source-map",
-    "estilos:dev": "sass src/sass:dist/css --watch --no-source-map"
+    "estilos": "sass src/sass:assets/dist/css --no-source-map",
+    "estilos:dev": "sass src/sass:assets/dist/css --watch --no-source-map",
+    "start": "node .",
+    "dev": "nodemon ."
   },
   "author": "LL",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.18.2",
     "sass": "^1.57.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }

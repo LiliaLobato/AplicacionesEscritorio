@@ -25,6 +25,7 @@ main{
 
 .container{
     padding: $default-margin;
+    padding-top: math.div($default-padding,10);
 
     > section {
         width: 100%;
@@ -53,6 +54,13 @@ hr {
     height: math.div($default-padding,2);
     background-color: $color-pink;
     border: 0px solid $color-pink;
+}
+
+#return{
+    text-align: left;
+    > i {
+        font-size:48px;
+    }
 }
 
 #hobbies {

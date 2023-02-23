@@ -27,6 +27,7 @@ main {
 
 .container {
   padding: 32px;
+  padding-top: 1px;
 }
 .container > section {
   width: 100%;
@@ -65,6 +66,13 @@ hr {
   height: 5px;
   background-color: #F26C7C;
   border: 0px solid #F26C7C;
+}
+
+#return {
+  text-align: left;
+}
+#return > i {
+  font-size: 48px;
 }
 
 #hobbies {
