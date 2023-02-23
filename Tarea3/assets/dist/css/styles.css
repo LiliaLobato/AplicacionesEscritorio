@@ -27,7 +27,7 @@ main {
 
 .container {
   padding: 32px;
-  padding-top: 1px;
+  padding-top: 5px;
 }
 .container > section {
   width: 100%;

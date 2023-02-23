@@ -25,7 +25,7 @@ main{
 
 .container{
     padding: $default-margin;
-    padding-top: math.div($default-padding,10);
+    padding-top: math.div($default-padding,2);
 
     > section {
         width: 100%;
