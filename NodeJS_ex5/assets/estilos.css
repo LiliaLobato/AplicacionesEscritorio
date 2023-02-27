@@ -1,0 +1,8 @@
+body{ 
+    font-family: Verdana, Tahoma, sans-serif; 
+    background-color: whitesmoke;
+}
+
+h1 { color : palevioletred; }
+h2 { color : lightskyblue; }
+h3, li { color : plum; }
