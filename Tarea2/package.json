@@ -1,0 +1,15 @@
+{
+  "name": "tarea2",
+  "version": "1.0.0",
+  "description": "tarea 2, conceptos sass",
+  "main": "index.js",
+  "scripts": {
+    "estilos": "sass src/sass:dist/css --no-source-map",
+    "estilos:dev": "sass src/sass:dist/css --watch --no-source-map"
+  },
+  "author": "LL",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.57.1"
+  }
+}
