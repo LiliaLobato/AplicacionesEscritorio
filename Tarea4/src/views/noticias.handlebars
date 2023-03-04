@@ -1,17 +1,23 @@
 <div class="fila">
     {{#each noticias}}
-        <div class="columna-50" >
+        <div class="columna-noticias columna-noticias-tablet columna-noticias-desktop" >
             <div class="tarjeta">
                 <div class="titulo">{{this.title}}</div>
                 <div class="cuerpo">
                     <section id="noticiaDate"> {{this.publishedAt}} </section>
-                    <section id="noticiaImage"> 
-                        <img src="{{this.urlToImage}}" alt="{{this.description}}">
-                    </section>
+                    {{#if this.urlToImage}}
+                        <section id="noticiaImage"> 
+                            <img src="{{this.urlToImage}}" alt="{{this.description}}">
+                        </section>
+                    {{/if}}
                     <section id="noticiaContent"> {{this.content}} </section>
                     <section id="noticiaDetalles"> 
-                        <br> Autor: {{this.author}}
-                        <br> Source: {{this.source.name}}
+                        {{#if this.author}}
+                            <br> <strong>Autor: </strong>{{this.author}}
+                        {{/if}}
+                        {{#if this.source}}
+                            <br> <strong>Source: </strong>{{this.source.name}}
+                        {{/if}}
                     </section>
                 </div>
                 <div class="pie">

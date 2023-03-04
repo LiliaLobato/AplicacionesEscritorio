@@ -2,11 +2,12 @@ const express = require ('express');
 const rutas = require ('./rutas');
 const path = require('path');
 const rutas2 = require ('./src/rutas');
+require('dotenv').config();
 
 const {engine} = require('express-handlebars')
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');

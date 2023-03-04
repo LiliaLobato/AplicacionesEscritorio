@@ -17,21 +17,20 @@
                 <div class="columna-75" id='filterContent'>
                     <section id="searchContent" >
                         <form action="/noticias" method="GET"> 
-                            <input type="text" name="text" class="search" placeholder="Search here!">
+                            <input type="text" name="filter" class="search" placeholder="Search here!">
                             <input type="submit" name="submit" class="submit" value="Search">
                         </form>   
                     </section>       
                     <section id="categoryContent" >
-                        <a href="https://www.intel.la/">@Intel</a>
-                        <a href="https://www.intel.la/">@Intel</a>
-                        <a href="https://www.intel.la/">@Intel</a>
-                        <a href="https://www.intel.la/">@Intel</a>
+                        <a href="/noticias?filter=Technology">Technology</a>
+                        <a href="/noticias?filter=Science">Science</a>
+                        <a href="/noticias?filter=Robotics">Robotics</a>
+                        <a href="/noticias?filter=Movies">Movies</a>
                     </section>          
                 </div>
             </div>                       
         </header>
         
-
         {{{body}}}
     
         <footer>

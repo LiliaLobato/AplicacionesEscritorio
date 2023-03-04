@@ -1,8 +1,8 @@
 const modelo = require('./../modelos/noticia');
 
-function traerTareas(req, res){
-    const filtros = req.query.text;
-    modelo.traerTareas(filtros).then(
+function traerNoticias(req, res){
+    const filtros = req.query.filter;
+    modelo.traerNoticias(filtros).then(
         noticias => {
             res.render('noticias', {noticias: noticias});
         }
@@ -13,24 +13,6 @@ function traerTareas(req, res){
     );
 }
 
-function traerTarea(req, res){
-    const noticia = modelo.traerTareas(res.params.id);
-    res.send('detalles de la noticia' + noticia);
-}
-
-function crearTarea(req, res){
-    console.log(req.body)
-    res.send('noticia creada 2');
-}
-
-function actualizarTarea(req, res){
-    res.send('noticia actualizada correctamente');
-}
-
-
 module.exports = {  
-    traerTareas,
-    traerTarea,
-    crearTarea,
-    actualizarTarea
+    traerNoticias,
 }
