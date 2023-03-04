@@ -26,3 +26,10 @@ $default-margin: 25px;
     font-family: $font-family;
     min-width: 300px;
 }
+
+@mixin defaultTitle{
+    font-weight: $font-weight;
+    margin-bottom: $default-padding;
+    width: 100%;
+    font-family: $font-family;
+}

@@ -10,6 +10,28 @@ html, body{
 
 body { height: 100%; }
 
+.container{
+    padding: $default-margin;
+    padding-top: math.div($default-padding,2);
+
+    > section {
+        width: 100%;
+        min-width: 200px;
+        text-align: center;
+        min-height: $default-padding * 2;
+        margin-top: $default-padding * 2;
+        margin-bottom: $default-padding * 2;
+        color: $color-grey;
+    }
+}
+
+[class*="pageTitle"] {
+    @include defaultTitle;
+    color: $color-pink;
+    font-size: $font-xlarge;
+}
+
+
 header, footer {
     font-size: $font-text;
     background-color: $color-background;
@@ -24,6 +46,13 @@ header, footer {
 footer{
     width: 100%;
     padding-right: 0;
+}
+
+hr {
+    width: 100%;
+    height: math.div($default-padding,2);
+    background-color: $color-pink;
+    border: 0px solid $color-pink;
 }
 
 form {
@@ -74,7 +103,7 @@ input {
     background: palevioletred;
     border-radius:0 0 $default-padding * 2 $default-padding * 2;
     padding: $default-padding;
-    text-align:center;
+    text-align: center;
     a{
         color: $color-lightbackground;
         text-decoration: none;
@@ -115,8 +144,8 @@ input {
     > div.columna-noticias  { width: 20%; }
 }
 
-@include tablet  {  .fila > div.columna-noticias-tablet    { width: 25%;} }
+@include tablet  {  .fila > div.columna-noticias-tablet    { width: 25%;}   }
 
-@include desktop {  .fila > div.columna-noticias-desktop    { width: 50%;} }
+@include desktop {  .fila > div.columna-noticias-desktop    { width: 50%;}  }
 
 @include monitor {  .fila > div.columna-noticias-desktop    { width: 100%;} }

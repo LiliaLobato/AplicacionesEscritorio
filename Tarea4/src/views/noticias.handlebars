@@ -1,29 +1,42 @@
-<div class="fila">
-    {{#each noticias}}
-        <div class="columna-noticias columna-noticias-tablet columna-noticias-desktop columna-noticias-monitor" >
-            <div class="tarjeta">
-                <div class="titulo">{{this.title}}</div>
-                <div class="cuerpo">
-                    <section id="noticiaDate"> {{this.publishedAt}} </section>
-                    {{#if this.urlToImage}}
-                        <section id="noticiaImage"> 
-                            <img src="{{this.urlToImage}}" alt="{{this.description}}">
+{{#if noticias}}
+    <div class="fila">
+        {{#each noticias}}
+            <div class="columna-noticias columna-noticias-tablet columna-noticias-desktop columna-noticias-monitor" >
+                <div class="tarjeta">
+                    <div class="titulo">{{this.title}}</div>
+                    <div class="cuerpo">
+                        <section id="noticiaDate"> {{this.publishedAt}} </section>
+                        {{#if this.urlToImage}}
+                            <section id="noticiaImage"> 
+                                <img src="{{this.urlToImage}}" alt="{{this.description}}">
+                            </section>
+                        {{/if}}
+                        <section id="noticiaContent"> {{this.content}} </section>
+                        <section id="noticiaDetalles"> 
+                            {{#if this.author}}
+                                <br> <strong>Autor: </strong>{{this.author}}
+                            {{/if}}
+                            {{#if this.source}}
+                                <br> <strong>Source: </strong>{{this.source.name}}
+                            {{/if}}
                         </section>
-                    {{/if}}
-                    <section id="noticiaContent"> {{this.content}} </section>
-                    <section id="noticiaDetalles"> 
-                        {{#if this.author}}
-                            <br> <strong>Autor: </strong>{{this.author}}
-                        {{/if}}
-                        {{#if this.source}}
-                            <br> <strong>Source: </strong>{{this.source.name}}
-                        {{/if}}
-                    </section>
-                </div>
-                <div class="pie">
-                    <a href="{{this.url}}">Más información</a>
+                    </div>
+                    <div class="pie">
+                        <a href="{{this.url}}" target="_blank">Más información</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    {{/each}}
-</div>         
+        {{/each}}
+    </div>         
+{{else}}
+    <div class="container">
+        <section id="overview" >
+            <div class="pageTitle-m pageTitle-g">
+                OH NO!
+            </div>
+            <p> 
+                This topic has no news right now!
+            </p>
+        </section>
+    </div>
+{{/if}}
