@@ -1,0 +1,23 @@
+<div class="fila">
+    {{#each noticias}}
+        <div class="columna-50" >
+            <div class="tarjeta">
+                <div class="titulo">{{this.title}}</div>
+                <div class="cuerpo">
+                    <section id="noticiaDate"> {{this.publishedAt}} </section>
+                    <section id="noticiaImage"> 
+                        <img src="{{this.urlToImage}}" alt="{{this.description}}">
+                    </section>
+                    <section id="noticiaContent"> {{this.content}} </section>
+                    <section id="noticiaDetalles"> 
+                        <br> Autor: {{this.author}}
+                        <br> Source: {{this.source.name}}
+                    </section>
+                </div>
+                <div class="pie">
+                    <a href="{{this.url}}">Más información</a>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+</div>         

@@ -1,8 +1,120 @@
-body{ 
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Faunces';
     font-family: Verdana, Tahoma, sans-serif; 
     background-color: whitesmoke;
+}
+
+body{
+    height: 100%;
+}
+header, footer {
+    font-size: 16px;
+    width: 90%;
+    background-color: #EED7D7;
+    color: gray;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10%;
+}
+
+footer{
+    width: 100%;
+    padding-right: 0;
 }
 
 h1 { color : palevioletred; }
 h2 { color : lightskyblue; }
 h3, li { color : plum; }
+
+form {
+    width: 400px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+input {
+    padding: 4px 10px;
+    border: 0;
+    font-size: 16px;
+    
+}
+  
+.search {
+    width: 75%;
+}
+  
+.submit {
+    width: 70px;
+    background-color: palevioletred;
+    color: #ffffff;
+}
+
+.fila > div[class ^="columna-"]{
+    float: left;
+    width: 100%;
+    min-height: 100px;
+    box-sizing: border-box;
+}
+
+#filterContent{
+    text-align: left;
+}
+#categoryContent{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {       
+    height: 100px;
+}
+
+.fila{
+    width: 100%;
+    min-height: 1px;
+}
+
+.fila::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.fila > div.columna-75 {
+    width: 75%;
+}
+.fila > div.columna-50 {
+    width: 50%;
+}
+.fila > div.columna-25 {
+    width: 25%;
+}
+
+.tarjeta{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+  border: 1px solid lightgray;
+  box-shadow: 2px 2px 8px 4px #d3d3d3d1;
+  border-radius:15px;
+  margin: 5%;
+}
+.titulo{
+  font-size: 24px;
+  padding: 10px 10px 0 10px;
+}
+.cuerpo{
+  padding: 10px;
+}
+.pie{
+  background: palevioletred;
+  border-radius:0 0 15px 15px;
+  padding: 10px;
+  text-align:center;
+}
+.pie a{
+  text-decoration: none;
+  color: white;
+}

@@ -1,5 +1,5 @@
 const express = require('express');
-const controlador = require('./../controladores/tareas');
+const controlador = require('./../controladores/noticias');
 const router = express.Router()
 
 router.post('', express.json(), controlador.crearTarea);

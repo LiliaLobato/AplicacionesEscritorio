@@ -5,20 +5,38 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-AU-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home</title>
+        <title>News</title>
         <link rel="stylesheet" href="./assets/estilos.css">
     </head>
 
     <body>
-        <nav>
-            <a href="/?token=123">Inicio</a>
-            <a href="/tareas?token=123">Tareas</a>
-        </nav>
-        <h1>
-            HOLA MUNDO
-        </h1>
+        
+        <header>
+            <div class="fila">
+                <div class="columna-25" ><img class='logo' src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123024/wwf-logo.png"></div>
+                <div class="columna-75" id='filterContent'>
+                    <section id="searchContent" >
+                        <form action="/noticias" method="GET"> 
+                            <input type="text" name="text" class="search" placeholder="Search here!">
+                            <input type="submit" name="submit" class="submit" value="Search">
+                        </form>   
+                    </section>       
+                    <section id="categoryContent" >
+                        <a href="https://www.intel.la/">@Intel</a>
+                        <a href="https://www.intel.la/">@Intel</a>
+                        <a href="https://www.intel.la/">@Intel</a>
+                        <a href="https://www.intel.la/">@Intel</a>
+                    </section>          
+                </div>
+            </div>                       
+        </header>
+        
 
         {{{body}}}
+    
+        <footer>
+            Programación de Aplicaciones de Escritorio - ITESO Primavera 2023
+        </footer>
         
     </body>
 
