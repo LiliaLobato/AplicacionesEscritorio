@@ -7,24 +7,62 @@ function traerTareas(req, res){
             res.status(200).send(response)
         }
     ).catch(
-        error=>{
-            res.status(400).send("Algo salió mal")
+        error => {
+            res.status(400).send("Algo salió mal: " + error)
         }
     );
 }
 
 function traerTarea(req, res){
-    const tarea = modelo.traerTareas(res.params.id);
-    res.send('detalles de la tarea' + tarea);
+    modelo.findById(req.params.id).then(
+        response =>{
+            console.log('Respuesta: ', response)
+            res.status(200).send(response)
+        }
+    ).catch(
+        error => {
+            res.status(400).send("Algo salió mal: " + error)
+        }
+    );
 }
 
 function crearTarea(req, res){
-    console.log(req.body)
-    res.send('tarea creada 2');
+    modelo.create(req.body).then(
+        response =>{
+            console.log('Respuesta: ', response)
+            res.status(200).send(response)
+        }
+    ).catch(
+        error => {
+            res.status(400).send("Algo salió mal: " + error)
+        }
+    );
 }
 
 function actualizarTarea(req, res){
-    res.send('tarea actualizada correctamente');
+    modelo.findByIdAndUpdate(req.params.id, req.body, {new: true}).then(
+        response =>{
+            console.log('Respuesta: ', response)
+            res.status(200).send(response)
+        }
+    ).catch(
+        error => {
+            res.status(400).send("Algo salió mal: " + error)
+        }
+    );
+}
+
+function eliminarTarea(req, res){
+    modelo.findByIdAndRemove(req.params.id).then(
+        response =>{
+            console.log('Respuesta: ', response)
+            res.status(200).send(response)
+        }
+    ).catch(
+        error => {
+            res.status(400).send("Algo salió mal: " + error)
+        }
+    );
 }
 
 
@@ -32,5 +70,6 @@ module.exports = {
     traerTareas,
     traerTarea,
     crearTarea,
-    actualizarTarea
+    actualizarTarea,
+    eliminarTarea
 }

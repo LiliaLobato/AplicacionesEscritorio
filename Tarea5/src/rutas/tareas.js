@@ -4,7 +4,9 @@ const router = express.Router()
 
 router.post('', express.json(), controlador.crearTarea);
 
-router.put('/:id', controlador.actualizarTarea);
+router.put('/:id', express.json(), controlador.actualizarTarea);
+
+router.delete('/:id', controlador.eliminarTarea);
 
 router.get('', controlador.traerTareas);
 
