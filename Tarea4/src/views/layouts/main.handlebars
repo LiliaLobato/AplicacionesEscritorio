@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-AU-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>News</title>
+        <link rel="stylesheet" href="./assets/dist/css/styles.css">
+    </head>
+
+    <body>
+        
+        <header>
+            <div class="fila">
+                <div class="columna-25" > <a href="/"> <img class='logo' src="https://newsapi.org/images/n-logo-border.png"> </a></div>
+                <div class="columna-75" id='filterContent'>
+                    <section id="searchContent" >
+                        <form action="/noticias" method="GET"> 
+                            <input type="text" name="filter" class="search" placeholder="Search here!">
+                            <input type="submit" name="submit" class="submit" value="Search">
+                        </form>   
+                    </section>       
+                    <section id="categoryContent" >
+                        <a href="/noticias?filter=Technology">Technology</a>
+                        <a href="/noticias?filter=Science">Science</a>
+                        <a href="/noticias?filter=Robotics">Robotics</a>
+                        <a href="/noticias?filter=Movies">Movies</a>
+                    </section>          
+                </div>
+            </div>                       
+        </header>
+        
+        {{{body}}}
+    
+        <footer>
+            Programación de Aplicaciones de Escritorio - ITESO Primavera 2023
+        </footer>
+        
+    </body>
+
+</html>
