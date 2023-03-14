@@ -1,13 +1,14 @@
 const modelo = require('./../modelos/tarea');
 
 function traerTareas(req, res){
-    modelo.traerTareas().then(
-        tareas => {
-            res.render('tareas', {tareas: tareas});
+    modelo.find().then(
+        response =>{
+            console.log('Respuesta: ', response)
+            res.render('tareas',{'tareas':response})
         }
     ).catch(
-        error => {
-            res.status(400).send('Algo salió mal');
+        error=>{
+            res.status(400).send("Algo salió mal")
         }
     );
 }
