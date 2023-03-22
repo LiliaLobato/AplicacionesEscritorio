@@ -8,6 +8,7 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 import { HomeBannerComponent } from './pages/home/home-banner/home-banner.component';
+import { TareasComponent } from './pages/tareas/tareas.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HomeBannerComponent } from './pages/home/home-banner/home-banner.compon
     FooterComponent,
     HomeComponent,
     SidebarComponent,
-    HomeBannerComponent
+    HomeBannerComponent,
+    TareasComponent
   ],
   imports: [
     BrowserModule,
