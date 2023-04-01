@@ -1,1 +1,16 @@
 <p>tareas works!</p>
+
+<!--
+corchetes es propiedad
+parentisis es evento
+-->
+<form (submit)="filtrar()">
+    <input name="buscar" type="text" placeholder="Buscar..." [(ngModel)]="buscar">
+    <button (click)="filtrar()">Buscar</button>
+</form>
+
+<ul>
+    <li *ngFor="let item of tareasFiltradas">
+        {{item.title}}
+    </li>
+</ul>

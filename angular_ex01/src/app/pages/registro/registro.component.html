@@ -1,0 +1,30 @@
+<p>registro works!</p>
+
+
+<form [formGroup]="formRegistro">
+    <div>
+        <div>
+            <span>Nombre:</span>
+            <input type="text" formControlName="nombre">
+        </div>
+        <div>
+            <span>Email:</span>
+            <input type="email" formControlName="email">
+        </div>
+        <div>
+            <span>Contraseña:</span>
+            <input type="password" formControlName="password">
+        </div>
+        <div>
+            <span>Confirmar Contraseña:</span>
+            <input type="password" formControlName="confirmPassword">
+        </div>
+        <div>
+            <input type="checkbox" formControlName="terminos"> Acepto los terminos y condiciones
+        </div>
+        <div>
+            <button [disabled]="formRegistro.invalid">Registrar</button>
+        </div>
+    </div>
+
+</form>
