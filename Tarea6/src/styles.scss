@@ -1,0 +1,182 @@
+/* You can add global styles to this file, and also import other style files */
+@use 'sass:math';
+@import '/src/sass/colors';
+@import '/src/sass/fonts';
+@import '/src/sass/mixins';
+
+html, body{ @include default; }
+
+body { height: 100%;}
+
+header, footer {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: $default-padding;
+    height: $default-margin;
+    font-size: $font-xsmall;
+    background-color: $color-yellow;
+    color: $color-grey;
+}
+
+main{
+    margin: 0 auto;
+    background-color: $color-background;
+}
+
+.container{
+    padding: $default-margin;
+
+    > section {
+        width: 100%;
+        min-width: 200px;
+        text-align: center;
+        min-height: $default-padding * 2;
+        margin-top: $default-padding * 2;
+        margin-bottom: $default-padding * 2;
+        color: $color-grey;
+    }
+}
+
+.blockTitle{
+    @include defaultTitle;
+    color: $color-background;
+    font-size: $font-large;
+    min-height: $default-margin;
+}
+
+p { @include defaultFont; }
+
+a { color: $color-background; }
+
+hr {
+    width: 100%;
+    height: math.div($default-padding,2);
+    background-color: $color-pink;
+    border: 0px solid $color-pink;
+}
+
+#hobbies {
+    outline-color: $color-font;
+    > .blockTitle   { color: $color-font; }
+    > p             { color: $color-font; }
+}
+
+#food {
+    outline-color: $color-pink;
+    > .blockTitle   { color: $color-pink; }
+    > p             { color: $color-pink; }
+}
+
+#pets {
+    outline-color: $color-blue;
+    > .blockTitle   { color: $color-blue; }
+    > p             { color: $color-blue; }
+}
+
+#education {
+    .blockTitle   { background-color: $color-boldFont; }
+    a { color: $color-boldFont; }
+}
+#projects {
+    .blockTitle   { background-color: $color-blue; }
+    a { color: $color-blue; }
+}
+#experience {
+    .blockTitle   { background-color: $color-font; }
+    a { color: $color-font; }
+}
+#archivements {
+    .blockTitle   { background-color: $color-green; }
+    a { color: $color-green; }
+}
+#contact {
+    .blockTitle   { background-color: $color-pink; }
+    a { color: $color-pink; }
+}
+
+img {
+    @include defaultPic;
+    
+    &[class*="circle"]{ 
+        @extend img;
+        height: $img-small;
+        width: $img-small;
+        border-radius: 50%;
+    }   
+    &[class*="rectangle"] { 
+        @extend img;
+        height: $img-small; 
+        width: $img-small + 50px;
+    }
+    &[class*="cover"] {
+        @extend img;
+        width: 100%;
+        height: $img-small * 2;
+    }
+}
+
+
+[class*="col-menu"] {
+    width: 100%;
+    text-align: center;
+    .blockTitle { background-color: $color-blue; }
+}
+
+[class*="box-stroke"] {
+    @include boxStroke;
+}
+
+[class*="pageTitle"] {
+    @include defaultTitle;
+    color: $color-boldFont;
+    font-size: $font-xlarge;
+    width: 100%; 
+    text-align: center;
+}
+
+[class*="overviewContent"] {
+    color: $color-font; 
+    font-size: $font-text; 
+    text-align: center;
+    width: 100%;
+}
+
+@include imgCol_3 {display: none;}
+@include imgCol_2 {display: none;}
+
+@include tablet {
+    /* For tablets: */
+    .col-menu-m {width: 90%;}
+    #overview {display: flex; column-gap: 10%;}
+    #overview {column-gap: 2%;}
+    #details section {display: flex; column-gap: 5%; justify-content: center;}
+    img{
+        &.circle-m {width: $img-medium; height: $img-medium;}
+        &.rectangle-m {width: $img-medium + 50px; height: $img-medium;}
+        &.cover-m {height: $img-medium * 2;}
+    }
+    @include imgCol_2 {display:unset;}
+    .box-stroke-m {outline-width: math.div($default-padding,2);}
+    hr {width:2%; height: auto;}
+    .overviewContent-m {width: 48%; text-align: left; font-size: $font-medium; }
+    #funFacts > .col-menu-m {width: 100%;}
+    #dailyLife > .col-menu-m {width: 100%;}
+}
+
+@include desktop {
+    /* For desktop: */
+    .col-menu-g {width: 90%;}
+    #funFacts, #dailyLife, #overview {display: flex; column-gap: 10%;} 
+    #overview {column-gap: 4%;}
+    img{
+        &.circle-m {width: $img-medium; height: $img-medium;}
+        &.rectangle-m {width: $img-large + 50px; height: $img-large;}
+        &.cover-m {height: $img-large * 2;}
+    }
+    @include imgCol_2 {display:unset;}
+    @include imgCol_3 {display:unset;}
+    .box-stroke-g {outline-width: math.div($default-padding,2);}
+    .overviewContent-g {width: 47%; text-align: left; font-size: $font-medium + 2px;  }
+}
+ 
