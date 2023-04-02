@@ -14,7 +14,7 @@ $img-large: $img-medium + 50px;
 }
 
 @mixin desktop {
-    @media only screen and (min-width: 1100px) {
+    @media only screen and (min-width: 1250px) {
         @content;
     }
 }

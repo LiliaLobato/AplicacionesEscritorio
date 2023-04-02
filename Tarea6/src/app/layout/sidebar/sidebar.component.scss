@@ -1,0 +1,43 @@
+@use 'sass:math';
+@import '/src/sass/colors';
+@import '/src/sass/fonts';
+@import '/src/sass/mixins';
+
+#education {
+    .blockTitle   { background-color: $color-boldFont; }
+    a { color: $color-boldFont; }
+}
+#projects {
+    .blockTitle   { background-color: $color-blue; }
+    a { color: $color-blue; }
+}
+#experience {
+    .blockTitle   { background-color: $color-font; }
+    a { color: $color-font; }
+}
+#archivements {
+    .blockTitle   { background-color: $color-green; }
+    a { color: $color-green; }
+}
+#contact {
+    .blockTitle   { background-color: $color-pink; }
+    a { color: $color-pink; }
+}
+
+
+[class*="col-menu"] {
+    width: 100%;
+    text-align: center;
+    .blockTitle { background-color: $color-blue; }
+}
+
+@include tablet {
+    /* For tablets: */
+    .col-menu-m {width: 90%;}
+}
+
+
+@include desktop {
+    /* For desktop: */
+    .col-menu-g {width: 90%;}
+}

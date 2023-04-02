@@ -1,0 +1,22 @@
+@use 'sass:math';
+@import '/src/sass/colors';
+@import '/src/sass/fonts';
+@import '/src/sass/mixins';
+
+.col-image {
+    text-align: center;
+    > .blockTitle {color: $color-font;}
+}
+
+.col-info { text-align: center; }
+
+@include tablet {
+    /* For tablets: */
+    #specificExperience {
+        display: flex; 
+        column-gap: 5%;
+        > .col-image {width: 25%;}
+        > .col-info {width: 75%;}
+    }
+    .col-info { text-align: left; }
+}

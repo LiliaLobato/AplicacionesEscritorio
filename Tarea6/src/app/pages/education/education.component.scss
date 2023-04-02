@@ -1,0 +1,30 @@
+@use 'sass:math';
+@import '/src/sass/colors';
+@import '/src/sass/fonts';
+@import '/src/sass/mixins';
+
+
+.fila > div[class ^="columna-"]{
+    min-height: 100px;
+}
+
+.fila {
+    > div.columna-education  { 
+        width: 100%; 
+        padding: $default-padding;
+    }
+}
+ 
+#hobbies {
+    outline-color: $color-font;
+    > .blockTitle   { color: $color-font; }
+    > p             { color: $color-font; }
+}
+
+@include tablet  {  
+    .fila > div.columna-education-tablet { width: 50%;}
+}
+
+@include desktop {  
+    .fila > div.columna-education-desktop { width: 33%;}  
+}

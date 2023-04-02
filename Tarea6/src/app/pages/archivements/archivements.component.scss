@@ -1,0 +1,34 @@
+@use 'sass:math';
+@import '/src/sass/colors';
+@import '/src/sass/fonts';
+@import '/src/sass/mixins';
+
+
+.fila > div[class ^="columna-"]{
+    min-height: 100px;
+}
+
+.fila {
+    > div.columna-archievements  { 
+        width: 100%; 
+        padding: $default-padding;
+    }
+}
+ 
+#hobbies {
+    outline-color: $color-font;
+    > .blockTitle   { color: $color-font; }
+    > p             { color: $color-font; }
+}
+
+img {
+    padding-top: $default-padding;
+}
+
+@include tablet  {  
+    .fila > div.columna-archievements-tablet { width: 33%;}
+}
+
+@include desktop {  
+    .fila > div.columna-archievements-desktop { width: 25%;}  
+}

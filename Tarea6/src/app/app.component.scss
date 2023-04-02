@@ -3,47 +3,19 @@
 @import '/src/sass/fonts';
 @import '/src/sass/mixins';
 
-.fila{
-    width: 100%;
-    min-height: 1px;
-}
 
-.fila::after{
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.fila > div[class ^="columna-"]{
-    float: left;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.fila > div.columna-s-100 {
-    width: 100%;
-}
-.fila > div.columna-s-75 {
-    width: 100%;
-}
-.fila > div.columna-s-50 {
-    width: 50%;
-}
-.fila > div.columna-s-25 {
-    width: 100%;
+.fila {
+    > div.columna-s-75  { 
+        width: 100%; 
+        padding: $default-padding;
+    }
+    > div.columna-s-25  { 
+        width: 100%; 
+        padding: $default-padding;
+    }
 }
 
 @include tablet {
-    .fila > div.columna-g-100 {
-        width: 100%;
-    }
-    .fila > div.columna-g-75 {
-        width: 75%;
-    }
-    .fila > div.columna-g-50 {
-        width: 50%;
-    }
-    .fila > div.columna-g-25 {
-        width: 25%;
-    }
+    .fila > div.columna-g-75 { width: 75%; }
+    .fila > div.columna-g-25 { width: 25%; }
 }

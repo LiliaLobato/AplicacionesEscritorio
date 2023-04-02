@@ -1,0 +1,41 @@
+@use 'sass:math';
+@import '/src/sass/colors';
+@import '/src/sass/fonts';
+@import '/src/sass/mixins';
+
+[class*="infoGeneralContent"] {
+    color: $color-font; 
+    font-size: $font-text; 
+    text-align: center;
+    width: 100%;
+}
+
+img {
+    &[class*="cover"] {
+        @extend img;
+        width: 100%;
+        height: $img-small * 2;
+    }
+}
+
+
+@include tablet {
+    /* For tablets: */
+    hr {width:2%; height: auto;}
+    #infoGeneral {display: flex; column-gap: 2%; justify-content: right;}
+    .infoGeneralContent-m {width: 100%; text-align: left; font-size: $font-medium; }
+    .infoGeneralContent-right {text-align: right;}
+    img{
+        &.cover-m {height: $img-medium;}
+    }
+}
+
+@include desktop {
+    /* For desktop: */
+    hr {width:1%; height: auto;}
+    .infoGeneralContent-g {font-size: $font-medium + 2px;  }
+    img{
+        &.cover-g {height: $img-large * 1.3;}
+    }
+}
+ 
