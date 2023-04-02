@@ -1,32 +1,26 @@
-
 <section id="experience">
-
-        <section id="specificExperience">
-            <article id="tattoo" class="col-image" >
+        <section id="specificExperience" *ngFor="let item of experiences">
+            <article class="col-image" >
                 <div class="blockTitle" >
-                    Fun Facts
+                    {{item.title}} 
+                    <p id="company">
+                        {{item.company}}
+                    </p> 
                 </div>
-                <img src="/assets/img/cover.jpg" alt="Tattoo" class="circle-m circle-g">
+                <img src="{{item.image}}" alt={{item.title}} class="circle-m ">
             </article>
-            <article id="horror" class="col-info">
-                <p>
-                    Swimming biomechanics<br>"Training tracker mobile app"
-                </p>
+            <article class="col-info">
+                <p id="basicInfo">
+                    {{item.period}}<br>{{item.description}}
+                </p> 
+                <ul>
+                    <li *ngFor="let item of item.details">
+                        <p id="detailedInfo" >
+                            {{item}}
+                        </p>
+                    </li>
+                </ul>
             </article>
         </section>
-        
-        <section id="specificExperience">
-            <article id="tattoo" class="col-image" >
-                <div class="blockTitle" >
-                    Fun Facts
-                </div>
-                <img src="/assets/img/cover.jpg" alt="Tattoo" class="circle-m circle-g">
-            </article>
-            <article id="horror" class="col-info">
-                <p>
-                    Swimming biomechanics<br>"Training tracker mobile app"
-                </p>
-            </article>
-        </section>
-    
+            
 </section>
