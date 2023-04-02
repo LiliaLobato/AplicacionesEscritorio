@@ -19,24 +19,6 @@ $img-large: $img-medium + 50px;
     }
 }
 
-@mixin imgCol_1 {
-    #hiking_1, #food_1, #kuro {
-        @content;
-    }
-}
-
-@mixin imgCol_2 {
-    #dance, #food_2, #max {
-        @content;
-    }
-}
-
-@mixin imgCol_3 {
-    #hiking_2, #food_3, #ambar {
-        @content;
-    }
-}
-
 @mixin defaultPic{
     object-fit: cover;
 }
