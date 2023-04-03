@@ -5,16 +5,13 @@
             Software Projects
         </div>
         <section id="specificProject">
-            <article id="tattoo" class="col-projects-g">
-                <img src="/assets/img/cover.jpg" alt="Tattoo" class="circle-m circle-g">
-                <p>
-                    Biomechanical Data Acquisition<br>"Real-time data animation"
+            <article *ngFor="let item of projectsSoftware" class="col-projects-g">
+                <img src={{item.image}} alt={{item.projectName}} class="circle-m circle-g">
+                <p id="projectName">
+                    {{item.projectName}}
                 </p>
-            </article>
-            <article id="horror" class="col-projects-g">
-                <img src="/assets/img/cover.jpg" alt="Horror" class="circle-m circle-g">
-                <p>
-                    Swimming biomechanics<br>"Training tracker mobile app"
+                <p id="techinicalName">
+                    {{item.techinicalName}}
                 </p>
             </article>
         </section>
@@ -25,16 +22,13 @@
             Hardware Projects
         </div>
         <section id="specificProject">
-            <article id="tattoo" class="col-projects-g">
-                <img src="/assets/img/cover.jpg" alt="Tattoo" class="circle-m circle-g">
-                <p>
-                    Biomechanical Data Acquisition<br>"Real-time data animation"
+            <article *ngFor="let item of projectsHardware" class="col-projects-g">
+                <img src={{item.image}} alt={{item.projectName}} class="circle-m circle-g">
+                <p id="projectName">
+                    {{item.projectName}}
                 </p>
-            </article>
-            <article id="horror" class="col-projects-g">
-                <img src="/assets/img/cover.jpg" alt="Horror" class="circle-m circle-g">
-                <p>
-                    Swimming biomechanics<br>"Training tracker mobile app"
+                <p id="techinicalName">
+                    {{item.techinicalName}}
                 </p>
             </article>
         </section>
@@ -45,16 +39,13 @@
             Mixed Projects
         </div>
         <section id="specificProject">
-            <article id="tattoo" class="col-projects-g">
-                <img src="/assets/img/cover.jpg" alt="Tattoo" class="circle-m circle-g">
-                <p>
-                    Biomechanical Data Acquisition<br>"Real-time data animation"
+            <article *ngFor="let item of projectsMixed" class="col-projects-g">
+                <img src={{item.image}} alt={{item.projectName}} class="circle-m circle-g">
+                <p id="projectName">
+                    {{item.projectName}}
                 </p>
-            </article>
-            <article id="horror" class="col-projects-g">
-                <img src="/assets/img/cover.jpg" alt="Horror" class="circle-m circle-g">
-                <p>
-                    Swimming biomechanics<br>"Training tracker mobile app"
+                <p id="techinicalName">
+                    {{item.techinicalName}}
                 </p>
             </article>
         </section>
