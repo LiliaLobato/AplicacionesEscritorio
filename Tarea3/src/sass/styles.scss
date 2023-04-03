@@ -1,0 +1,174 @@
+@use 'sass:math';
+@import 'mixins';
+@import 'colors';
+@import 'fonts';
+
+html, body{ @include default; }
+
+body { height: 100%; }
+
+header, footer {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: $default-padding;
+    height: $default-margin;
+    font-size: $font-xsmall;
+    background-color: $color-yellow;
+    color: $color-grey;
+}
+
+main{
+    margin: 0 auto;
+    background-color: $color-background;
+}
+
+.container{
+    padding: $default-margin;
+    padding-top: math.div($default-padding,2);
+
+    > section {
+        width: 100%;
+        min-width: 200px;
+        text-align: center;
+        min-height: $default-padding * 2;
+        margin-top: $default-padding * 2;
+        margin-bottom: $default-padding * 2;
+        color: $color-grey;
+    }
+}
+
+.blockTitle{
+    @include defaultTitle;
+    color: $color-background;
+    font-size: $font-large;
+    min-height: $default-margin;
+}
+
+p { @include defaultFont; }
+
+a { color: $color-pink; }
+
+hr {
+    width: 100%;
+    height: math.div($default-padding,2);
+    background-color: $color-pink;
+    border: 0px solid $color-pink;
+}
+
+#return{
+    text-align: left;
+    > i {
+        font-size:48px;
+    }
+}
+
+#hobbies {
+    outline-color: $color-font;
+    > .blockTitle   { color: $color-font; }
+    > p             { color: $color-font; }
+}
+
+#food {
+    outline-color: $color-pink;
+    > .blockTitle   { color: $color-pink; }
+    > p             { color: $color-pink; }
+}
+
+#pets {
+    outline-color: $color-blue;
+    > .blockTitle   { color: $color-blue; }
+    > p             { color: $color-blue; }
+}
+
+img {
+    @include defaultPic;
+    
+    &[class*="circle"]{ 
+        @extend img;
+        height: $img-small;
+        width: $img-small;
+        border-radius: 50%;
+    }   
+    &[class*="rectangle"] { 
+        @extend img;
+        height: $img-small; 
+        width: $img-small + 50px;
+    }
+    &[class*="cover"] {
+        @extend img;
+        width: 100%;
+        height: $img-small * 2;
+    }
+}
+
+[class*="col-specifics"] {
+    width: 100%;
+    .blockTitle { background-color: $color-blue; }
+}
+[class*="col-menu"] {
+    width: 100%;
+    .blockTitle { background-color: $color-blue; }
+    #daily { background-color: $color-pink; }
+    #education { background-color: $color-font; }
+}
+
+[class*="box-stroke"] {
+    @include boxStroke;
+}
+
+[class*="pageTitle"] {
+    @include defaultTitle;
+    color: $color-boldFont;
+    font-size: $font-xlarge;
+}
+
+[class*="overviewContent"] {
+    color: $color-font; 
+    font-size: $font-text; 
+    text-align: center;
+    width: 100%;
+}
+
+@include imgCol_3 {display: none;}
+@include imgCol_2 {display: none;}
+
+@include tablet {
+    /* For tablets: */
+    .col-specifics-m {width: 45%;}
+    .col-menu-m {width: 25%;}
+    #specifics, #overview, #menu {display: flex; column-gap: 10%;}
+    #overview {column-gap: 2%;}
+    #details section {display: flex; column-gap: 5%; justify-content: center;}
+    img{
+        &.circle-m {width: $img-medium; height: $img-medium;}
+        &.rectangle-m {width: $img-medium + 50px; height: $img-medium;}
+        &.cover-m {height: $img-medium * 2;}
+    }
+    @include imgCol_2 {display:unset;}
+    .box-stroke-m {outline-width: math.div($default-padding,2);}
+    hr {width:2%; height: auto;}
+    .overviewContent-m {width: 48%; text-align: left; font-size: $font-medium; }
+    .pageTitle-m {width: 48%; text-align: right;}
+    #funFacts > .col-specifics-m {width: 100%;}
+    #dailyLife > .col-specifics-m {width: 100%;}
+}
+
+@include desktop {
+    /* For desktop: */
+    .col-specifics-g {width: 45%;}
+    .col-menu-g {width: 25%;}
+    #specifics, #funFacts, #dailyLife, #overview, #menu {display: flex; column-gap: 10%;} 
+    #overview {column-gap: 4%;}
+    img{
+        &.circle-m {width: $img-medium; height: $img-medium;}
+        &.rectangle-m {width: $img-large + 50px; height: $img-large;}
+        &.cover-m {height: $img-large * 2;}
+    }
+    @include imgCol_2 {display:unset;}
+    @include imgCol_3 {display:unset;}
+    .box-stroke-g {outline-width: math.div($default-padding,2);}
+    .overviewContent-g {width: 47%; text-align: left; font-size: $font-medium + 2px;  }
+    .pageTitle-g {width: 47%; text-align: right;}
+}
+ 
