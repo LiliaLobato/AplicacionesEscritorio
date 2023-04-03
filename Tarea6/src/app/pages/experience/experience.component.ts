@@ -20,7 +20,7 @@ export class ExperienceComponent {
         'Execution of tests, manual and automated.',
         'Skills acquired: TypeScript, Python, DevOps and JavaScript'
       ],
-      image: '/assets/img/cover.jpg'
+      image: '/assets/img/experience/applicationDeveloperIntern.jpg'
     },
     {
       title: 'Software Engineer Intern',
@@ -34,7 +34,7 @@ export class ExperienceComponent {
         'Execution of tests, manual and automated.',
         'Skills acquired: .NET framework, C#, TypeScript and JavaScript'
       ],
-      image: '/assets/img/cover.jpg'
+      image: '/assets/img/experience/softwareEngineerIntern.jpg'
     },
     {
       title: 'Functional Validation Engineer',
@@ -48,7 +48,7 @@ export class ExperienceComponent {
         'Management of automated testing infrastructure (execution strategy and triage of failures).',
         'Skills acquired: Python and Linux'
       ],
-      image: '/assets/img/cover.jpg'
+      image: '/assets/img/experience/functionalValidationEngineer.jpg'
     },
     {
       title: 'Engineering Intern, Pre-Silicon Validation Intern',
@@ -64,7 +64,7 @@ export class ExperienceComponent {
         'Cooperate effectively with senior personnel to provide support and assistance in the completion of various operations.',
         'Involved on the Internship Program as a Mentor with 4 younger interns on my charge.'
       ],
-      image: '/assets/img/cover.jpg'
+      image: '/assets/img/experience/preSiliconValidationIntern.jpg'
     }
   ];
 }

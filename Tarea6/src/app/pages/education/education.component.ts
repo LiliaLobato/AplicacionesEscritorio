@@ -13,7 +13,7 @@ export class EducationComponent {
       degree: 'BSc. in Computer Systems Engineering',
       school: 'ITESO',
       period: ' (2021/ May 2023)',
-      image: '/assets/img/cover.jpg',
+      image: '/assets/img/education/IS.jpg',
       color: Colors.Blue,
       description: ['Awarded “Certificate of International & Intercultural Competencies”']
     },
@@ -21,7 +21,7 @@ export class EducationComponent {
       degree: 'BSc. in Electronic Engineering',
       school: 'ITESO',
       period: ' (2016/ 2021)',
-      image: '/assets/img/cover.jpg',
+      image: '/assets/img/education/IE.jpg',
       description: [
         'Ex-Career President & Ex-Varsity Team Member',
         'AJIEMS & Andy Grove Scholarship Winner'
@@ -29,7 +29,7 @@ export class EducationComponent {
     },
     {
       degree: 'Entrepreneurship Diploma course',
-      image: '/assets/img/cover.jpg',
+      image: '/assets/img/education/DC.jpg',
       color: Colors.LightGreen,
       description: [
         '"Yo Emprendo 2017", Tecnológico de Monterrey',

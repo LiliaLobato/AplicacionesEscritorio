@@ -12,13 +12,13 @@ export class ProjectsComponent {
     projectName: '"Real-time data animation"',
     techinicalName: 'Biomechanical Data Acquisition',
     projectType: Type.Software,
-    image: '/assets/img/cover.jpg',
+    image: '/assets/img/projects/biomechanicalData.jpg',
     },
     {
     projectName: '"Training tracker mobile app"',
     techinicalName: 'Swimming biomechanics',
     projectType: Type.Software,
-    image: '/assets/img/cover.jpg',
+    image: '/assets/img/projects/swimmingBiomechanics.jpg',
     },
   ]
 
@@ -27,13 +27,13 @@ export class ProjectsComponent {
     projectName: '"Sabby Tracker"',
     techinicalName: 'SIDS monitoring system',
     projectType: Type.Hardware,
-    image: '/assets/img/cover.jpg',
+    image: '/assets/img/projects/sids.jpg',
     },
     {
     projectName: '“MECA Spider”',
     techinicalName: 'Robotic Hexapod',
     projectType: Type.Hardware,
-    image: '/assets/img/cover.jpg',
+    image: '/assets/img/projects/roboticHexapod.jpg',
     },
   ]
 
@@ -43,13 +43,13 @@ export class ProjectsComponent {
     projectName: '"Mars Mission Rover"',
     techinicalName: 'Electronics Team Leader, colaborating with the Software and Mechanical team',
     projectType: Type.Mixed,
-    image: '/assets/img/cover.jpg',
+    image: '/assets/img/projects/marsRover.jpg',
     },
     {
     projectName: '"Lunar Mission Rover"',
     techinicalName: 'Lunar soil analysis to generate a map of the distribution of volaties',
     projectType: Type.Mixed,
-    image: '/assets/img/cover.jpg',
+    image: '/assets/img/projects/lunarRover.jpg',
     },
   ]
    
