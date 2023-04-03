@@ -6,6 +6,7 @@
 
 .fila > div[class ^="columna-"]{
     min-height: 100px;
+    
 }
 
 .fila {
@@ -14,11 +15,45 @@
         padding: $default-padding;
     }
 }
- 
-#hobbies {
+
+.cut-text { 
+    width: auto; 
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+#archievement {
     outline-color: $color-font;
-    > .blockTitle   { color: $color-font; }
+    > .blockTitle   { color: $color-font; text-align: center;}
     > p             { color: $color-font; }
+
+    &.blue {
+        outline-color: $color-boldFont;
+        > .blockTitle   { color: $color-boldFont; }
+        > p { color: $color-boldFont; }
+    }
+    &.lightBlue {
+        outline-color: $color-blue;
+        > .blockTitle   { color: $color-blue; }
+        > p { color: $color-blue; }
+    }
+    &.green {
+        outline-color: $color-font;
+        > .blockTitle   { color: $color-font; }
+        > p { color: $color-font; }
+    }
+    &.lightGreen {
+        outline-color: $color-green;
+        > .blockTitle   { color: $color-green; }
+        > p { color: $color-green; }
+    }
+    &.pink {
+        outline-color: $color-pink;
+        > .blockTitle   { color: $color-pink; }
+        > p { color: $color-pink; }
+    }
 }
 
 img {
@@ -26,9 +61,9 @@ img {
 }
 
 @include tablet  {  
-    .fila > div.columna-archievements-tablet { width: 33%;}
+    .fila > div.columna-archievements-tablet { width: 33%; height: 500px;}
 }
 
 @include desktop {  
-    .fila > div.columna-archievements-desktop { width: 25%;}  
+    .fila > div.columna-archievements-desktop   { width: 25%; height: 500px;}
 }

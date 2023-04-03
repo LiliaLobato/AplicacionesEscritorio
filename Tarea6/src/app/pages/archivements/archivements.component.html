@@ -1,58 +1,15 @@
 <section id="archievements">
     <div class="fila">
-        <div class="columna-archievements columna-archievements-tablet columna-archievements-desktop columna-archievements-monitor" >
-            <article id="hobbies" class="box-stroke-m box-stroke-g">
+        <div *ngFor="let item of archivements" class="columna-archievements columna-archievements-tablet columna-archievements-desktop columna-archievements-monitor" >
+            <article id="archievement" class="box-stroke-m box-stroke-g {{item.color}}">
                 <section>
-                    <img id="hiking_1" src="/assets/img/cover.jpg" alt="Hiking Mount Rainier" class="rectangle-m rectangle-g">
+                    <img src={{item.image}} alt={{item.award}} class="rectangle-m rectangle-g">
                 </section>
-                <div class="blockTitle">
-                    BSc. in Computer Systems Engineering
+                <div class="blockTitle cut-text">
+                    {{item.award}}
                 </div>
                 <p>
-                    ITESO (2021/ May 2023) <br>
-                    Awarded “Certificate of International & Intercultural Competencies”
-                </p>
-            </article>
-        </div>
-        <div class="columna-archievements columna-archievements-tablet columna-archievements-desktop columna-archievements-monitor" >
-            <article id="hobbies" class="box-stroke-m box-stroke-g">
-                <section>
-                    <img id="hiking_1" src="/assets/img/cover.jpg" alt="Hiking Mount Rainier" class="rectangle-m rectangle-g">
-                </section>
-                <div class="blockTitle">
-                    BSc. in Computer Systems Engineering
-                </div>
-                <p>
-                    ITESO (2021/ May 2023) <br>
-                    Awarded “Certificate of International & Intercultural Competencies”
-                </p>
-            </article>
-        </div>
-        <div class="columna-archievements columna-archievements-tablet columna-archievements-desktop columna-archievements-monitor" >
-            <article id="hobbies" class="box-stroke-m box-stroke-g">
-                <section>
-                    <img id="hiking_1" src="/assets/img/cover.jpg" alt="Hiking Mount Rainier" class="rectangle-m rectangle-g">
-                </section>
-                <div class="blockTitle">
-                    BSc. in Computer Systems Engineering
-                </div>
-                <p>
-                    ITESO (2021/ May 2023) <br>
-                    Awarded “Certificate of International & Intercultural Competencies”
-                </p>
-            </article>
-        </div>
-        <div class="columna-archievements columna-archievements-tablet columna-archievements-desktop columna-archievements-monitor" >
-            <article id="hobbies" class="box-stroke-m box-stroke-g">
-                <section>
-                    <img id="hiking_1" src="/assets/img/cover.jpg" alt="Hiking Mount Rainier" class="rectangle-m rectangle-g">
-                </section>
-                <div class="blockTitle">
-                    BSc. in Computer Systems Engineering
-                </div>
-                <p>
-                    ITESO (2021/ May 2023) <br>
-                    Awarded “Certificate of International & Intercultural Competencies”
+                    {{item.contest}}<br>{{item.year}}
                 </p>
             </article>
         </div>

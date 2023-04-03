@@ -32,10 +32,7 @@
             padding-bottom: 0;  margin-bottom: 0;
         }
     }
-}
-
-
-#education {
+    
     .pink {
         outline-color: $color-pink;
         > .blockTitle   { color: $color-pink; }
@@ -58,5 +55,6 @@
 }
 
 @include desktop {  
-    .fila > div.columna-education-desktop { width: 33%;}  
+    .fila > div.columna-education-desktop { width: 33%; } 
+    #education { min-height: 450px; } 
 }
