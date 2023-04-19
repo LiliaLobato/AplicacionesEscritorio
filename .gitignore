@@ -2,3 +2,4 @@
 **/*.map
 **/dist/css/*.css
 **/.env
+**/.angular/cache
