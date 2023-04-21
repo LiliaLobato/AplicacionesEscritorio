@@ -1,0 +1,25 @@
+@use 'sass:math';
+@import '/src/sass/colors';
+@import '/src/sass/fonts';
+@import '/src/sass/mixins';
+
+[class*="contactContent"] {
+    color: $color-font; 
+    font-size: $font-text; 
+    text-align: center;
+    width: 100%;
+}
+
+@include tablet {
+    /* For tablets: */
+    hr {width:2%; height: auto;}
+    #contact {display: flex; column-gap: 2%; justify-content: right;}
+    .contactContent-m {width: 100%; text-align: left; font-size: $font-medium; }
+}
+
+@include desktop {
+    /* For desktop: */
+    hr {width:1%; height: auto;}
+    .contactContent-g {font-size: $font-medium + 2px;  }
+}
+ 

@@ -1,0 +1,25 @@
+@use 'sass:math';
+@import '/src/sass/colors';
+@import '/src/sass/fonts';
+@import '/src/sass/mixins';
+
+[class*="pageTitle"] {
+    @include defaultTitle;
+    color: $color-boldFont;
+    font-size: $font-xlarge;
+    width: 100%; 
+    text-align: center;
+}
+
+@include tablet {
+    /* For tablets: */
+    #overview {display: flex; column-gap: 10%;}
+    #overview {column-gap: 2%;}
+}
+
+@include desktop {
+    /* For desktop: */
+    #overview {display: flex; column-gap: 10%;} 
+    #overview {column-gap: 4%;}
+}
+ 

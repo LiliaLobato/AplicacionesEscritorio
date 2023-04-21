@@ -1,0 +1,17 @@
+<section id="archievements">
+    <div class="fila">
+        <div *ngFor="let item of archivements" class="columna-archievements columna-archievements-tablet columna-archievements-desktop columna-archievements-monitor" >
+            <article id="archievement" class="box-stroke-m box-stroke-g {{item.color}}">
+                <section>
+                    <img src={{item.image}} alt={{item.award}} class="rectangle-m rectangle-g">
+                </section>
+                <div class="blockTitle cut-text">
+                    {{item.award}}
+                </div>
+                <p>
+                    {{item.contest}}<br>{{item.year}}
+                </p>
+            </article>
+        </div>
+    </div>    
+ </section>

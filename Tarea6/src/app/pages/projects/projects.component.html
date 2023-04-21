@@ -1,0 +1,54 @@
+
+<section id="projects">
+    <article id="software" >
+        <div class="blockTitle" >
+            Software Projects
+        </div>
+        <section id="specificProject">
+            <article *ngFor="let item of projectsSoftware" class="col-projects-g">
+                <img src={{item.image}} alt={{item.projectName}} class="circle-m circle-g">
+                <p id="projectName">
+                    {{item.projectName}}
+                </p>
+                <p id="techinicalName">
+                    {{item.techinicalName}}
+                </p>
+            </article>
+        </section>
+    </article>  
+
+    <article id="hardware" >
+        <div class="blockTitle" >
+            Hardware Projects
+        </div>
+        <section id="specificProject">
+            <article *ngFor="let item of projectsHardware" class="col-projects-g">
+                <img src={{item.image}} alt={{item.projectName}} class="circle-m circle-g">
+                <p id="projectName">
+                    {{item.projectName}}
+                </p>
+                <p id="techinicalName">
+                    {{item.techinicalName}}
+                </p>
+            </article>
+        </section>
+    </article>  
+
+    <article id="mixed" >
+        <div class="blockTitle" >
+            Mixed Projects
+        </div>
+        <section id="specificProject">
+            <article *ngFor="let item of projectsMixed" class="col-projects-g">
+                <img src={{item.image}} alt={{item.projectName}} class="circle-m circle-g">
+                <p id="projectName">
+                    {{item.projectName}}
+                </p>
+                <p id="techinicalName">
+                    {{item.techinicalName}}
+                </p>
+            </article>
+        </section>
+    </article>  
+
+</section>

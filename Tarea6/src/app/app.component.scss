@@ -1,0 +1,21 @@
+@use 'sass:math';
+@import '/src/sass/colors';
+@import '/src/sass/fonts';
+@import '/src/sass/mixins';
+
+
+.fila {
+    > div.columna-s-75  { 
+        width: 100%; 
+        padding: $default-padding;
+    }
+    > div.columna-s-25  { 
+        width: 100%; 
+        padding: $default-padding;
+    }
+}
+
+@include tablet {
+    .fila > div.columna-g-75 { width: 75%; }
+    .fila > div.columna-g-25 { width: 25%; }
+}

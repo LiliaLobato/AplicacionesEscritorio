@@ -1,0 +1,39 @@
+@use 'sass:math';
+@import '/src/sass/colors';
+@import '/src/sass/fonts';
+@import '/src/sass/mixins';
+
+.col-image {
+    text-align: center;
+    > .blockTitle {color: $color-font;}
+}
+
+.col-info { text-align: center; }
+
+#company{
+    font-size: $font-medium + 5px;
+    color: $color-green;
+    margin: 0;
+}
+
+#basicInfo{
+    font-size: $font-medium ;
+    margin-bottom: 0;
+}
+
+#detailedInfo{
+    text-align: left;
+    margin: 0;
+}
+
+@include tablet {
+    /* For tablets: */
+    #specificExperience {
+        display: flex; 
+        padding-bottom: $default-padding;
+        column-gap: 5%;
+        > .col-image {width: 40%;}
+        > .col-info {width: 60%;}
+    }
+    .col-info { text-align: left; }
+}

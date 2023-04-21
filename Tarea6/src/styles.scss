@@ -1,0 +1,109 @@
+/* You can add global styles to this file, and also import other style files */
+@use 'sass:math';
+@import '/src/sass/colors';
+@import '/src/sass/fonts';
+@import '/src/sass/mixins';
+
+html, body{ @include default; }
+
+body { height: 100%;}
+
+main{
+    margin: 0 auto;
+    background-color: $color-background;
+}
+
+.container{
+    padding: $default-margin;
+
+    > section {
+        width: 100%;
+        min-width: 200px;
+        text-align: center;
+        min-height: $default-padding * 2;
+        margin-top: $default-padding * 2;
+        margin-bottom: $default-padding * 2;
+        color: $color-grey;
+    }
+}
+
+.blockTitle{
+    @include defaultTitle;
+    color: $color-background;
+    font-size: $font-large;
+    min-height: $default-margin;
+}
+
+p {
+    @include defaultFont; 
+    a { color: $color-green; }
+}
+
+a { color: $color-background; }
+
+hr {
+    width: 100%;
+    height: math.div($default-padding,2);
+    background-color: $color-pink;
+    border: 0px solid $color-pink;
+}
+
+.fila > div[class ^="columna-"]{
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.fila {
+    width: 100%;
+    min-height: 1px;
+    &::after{
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+img {
+    @include defaultPic;
+}
+
+img {
+    @include defaultPic;
+    
+    &[class*="circle"]{ 
+        @extend img;
+        height: $img-small;
+        width: $img-small;
+        border-radius: 50%;
+    }   
+    &[class*="rectangle"] { 
+        @extend img;
+        height: $img-small; 
+        width: 100%;
+    }
+}
+
+[class*="box-stroke"] {
+    @include boxStroke;
+}
+
+@include tablet {
+    /* For tablets: */
+    img{
+        &.circle-m {width: $img-medium; height: $img-medium;}
+        &.rectangle-m {width: 100%; height: $img-medium;}
+    }
+    .box-stroke-m {outline-width: math.div($default-padding,2);}
+    #dailyLife > .col-menu-m {width: 100%;}
+}
+
+@include desktop {
+    /* For desktop: */
+    img{
+        &.circle-g {width: $img-large; height: $img-large;}
+        &.rectangle-g {width: 100%; height: $img-large;}
+    }
+    .box-stroke-g {outline-width: math.div($default-padding,2);}
+}
+ 

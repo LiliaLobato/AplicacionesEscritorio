@@ -1,0 +1,20 @@
+<section id="education">
+    <div class="fila" >
+        <div *ngFor="let item of educacion" class="columna-education columna-education-tablet columna-education-desktop columna-education-monitor" >
+            <article id="education" class="box-stroke-m box-stroke-g {{item.color}}">
+                <div class="blockTitle">
+                    {{item.degree}}
+                </div>
+                <section>
+                    <img src={{item.image}} alt={{item.degree}} class="rectangle-m rectangle-g">
+                </section>
+                <p id="infoSchool">
+                    {{item.school}} {{item.period}}
+                </p>
+                <p id="details" *ngFor="let item of item.description">
+                    {{item}}
+                </p>
+            </article>
+        </div>
+    </div>    
+ </section>

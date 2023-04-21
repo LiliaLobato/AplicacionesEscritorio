@@ -1,0 +1,26 @@
+<section id="experience">
+        <section id="specificExperience" *ngFor="let item of experiences">
+            <article class="col-image" >
+                <div class="blockTitle" >
+                    {{item.title}} 
+                    <p id="company">
+                        {{item.company}}
+                    </p> 
+                </div>
+                <img src="{{item.image}}" alt={{item.title}} class="circle-m ">
+            </article>
+            <article class="col-info">
+                <p id="basicInfo">
+                    {{item.period}}<br>{{item.description}}
+                </p> 
+                <ul>
+                    <li *ngFor="let item of item.details">
+                        <p id="detailedInfo" >
+                            {{item}}
+                        </p>
+                    </li>
+                </ul>
+            </article>
+        </section>
+            
+</section>

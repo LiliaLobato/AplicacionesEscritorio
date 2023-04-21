@@ -1,0 +1,24 @@
+@use 'sass:math';
+@import '/src/sass/colors';
+@import '/src/sass/fonts';
+@import '/src/sass/mixins';
+
+#software .blockTitle { color: $color-font; }
+#hardware .blockTitle { color: $color-boldFont; }
+#mixed .blockTitle { color: $color-pink; }
+
+#techinicalName { margin-top: 0; }
+#projectName {
+    font-size: $font-medium;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.blockTitle { font-size: $font-large + 5px; }
+#projects { text-align: center; }
+
+@include tablet {
+    /* For tablets: */
+    #specificProject > .col-projects-g {width: 100%;}
+    #specificProject {display: flex; column-gap: 10%;} 
+}
